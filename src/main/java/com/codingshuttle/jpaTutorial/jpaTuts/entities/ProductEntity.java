@@ -1,10 +1,9 @@
 package com.codingshuttle.jpaTutorial.jpaTuts.entities;
-
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -17,12 +16,12 @@ import java.time.LocalDateTime;
 @Builder
 @Entity
 @Table(
-        name = "product_table",
+        name="product_table",
         uniqueConstraints = {
-                @UniqueConstraint(name = "title_price_unique", columnNames = {"title_x", "price"})
+            @UniqueConstraint(name = "title_price_unique", columnNames = {"title_x", "price"})
         },
         indexes = {
-                @Index(name = "sku_index", columnList = "sku")
+                @Index(name="sku_index", columnList = "sku")
         }
 )
 public class ProductEntity {
